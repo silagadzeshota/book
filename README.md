@@ -1,34 +1,8 @@
 <p align="center">
   <a href="#how-to-build">How to Build</a> •
-  <a href="#running">How to Run</a> •
-
 </p>
 
-<h2><a id="user-content-whats-tron" class="anchor" aria-hidden="true" href="#whats-tron"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What's Coin Server</h2>
-<p>Coin Server aims to manage blockchain related operations for casino and exposes api for interacting with network</p>
-<p>Application provides api which is sufficient to conduct main processes into public blockchain network. Simple interface enables users to Generate new wallets (maybe with registering new accounts in blockchain), Make withdrawal transaction, and Receive transaction states (canceled, unconfirmed confirmed) about wallets which are of our interest (withdraw, or generated deposit wallets) </p>
-<p>Internally application is divided into four main parts <strong>1. Blockchain Parser</strong>, <strong>2. Balance Service</strong>, <strong>3. Wallet Generator</strong>. <strong>4. Thrift Server Communication</strong> which direct all incoming requests and processes</p>
-
 <h1><a id="user-content-how-to-build" class="anchor" aria-hidden="true" href="#how-to-build"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to Build</h1>
-<h2><a id="user-content-prepare-dependencies" class="anchor" aria-hidden="true" href="#prepare-dependencies"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prepare dependencies</h2>
-<ul>
-<li><a href="https://www.boost.org/" rel="nofollow"><strong>Boost C++ Libraries</strong></a>, supplementary c++ libraries <strong>(Preferably 1.62)</strong></li>
-<li><a href="https://www.postgresql.org/download/" rel="nofollow"><strong>PostgreSQL Database</strong></a>, databased used by coinserver. <strong>(Required >= 9.5)</strong></li>
-<li><a href="https://thrift.apache.org/lib/cpp" rel="nofollow"><strong>Apache Thrift</strong></a>, which is main communication channel to and from coin server. <strong>(Required 0.9.1)</strong></li></li>
-<li><a href="http://pqxx.org/development/libpqxx/" rel="nofollow"><strong>Libpqxx</strong></a>, C++ Client API for postgreSQL.</li>
-<li><a href="https://www.cryptopp.com/" rel="nofollow"><strong>Crypto++</strong></a>, cryptographic library for data encryption.</li>
-<li><a href="https://www.openssl.org/source/" rel="nofollow"><strong>Openssl</strong></a>, Cryptography toolkit.</li>
-<li><a href="https://github.com/libbitcoin/libbitcoin-system" rel="nofollow"><strong>Libbitcoin-System</strong></a>, Bitcoin c++ library.</li>
-<br>
-<p><strong>Coin Specific Prerequisites</strong></p>
-
-<li><a href="https://github.com/tronprotocol/java-tron" rel="nofollow"><strong>Java-Tron</strong></a>, Tron blockchain client for interacting with public or private blockchains</li>
-<li><a href="https://github.com/ethereum/go-ethereum/wiki/Installing-Geth" rel="nofollow"><strong>Geth</strong></a>, Ethereum blockchain go client for interacting with public or private blockchains</li>
-
-
-
-</ul>
-
 <h2><a id="user-content-getting-the-code-with-git" class="anchor" aria-hidden="true" href="#getting-the-code-with-git"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting the code with git and build</h2>
 <ul>
 <li>Use Git from the Terminal, see the <a href="https://help.github.com/articles/set-up-git/">Setting up Git</a> and <a href="https://help.github.com/articles/fork-a-repo/">Fork a Repo</a> articles.</li>
